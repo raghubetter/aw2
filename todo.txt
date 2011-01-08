@@ -1,0 +1,13 @@
+search - retiress page
+
+move to slice
+
+email to T. Raghavendra
+
+0. retiree model .. get all the fields
+
+1. retiree scaffold
+
+img tag for retiree
+
+2. vote up button on the home page

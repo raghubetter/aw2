@@ -1,0 +1,36 @@
+<h1>Listing retirees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Years worked</th>
+    <th>Plant</th>
+    <th>Pet story</th>
+    <th>What are you doing</th>
+    <th>Message to ceo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @retirees.each do |retiree| %>
+  <tr>
+    <td><%=image_tag(retiree.photo_path1) %></td>
+    <td><%= retiree.first_name %> <%= retiree.last_name %></td>
+    <td><%= retiree.years_worked %></td>
+    <td><%= retiree.plant %></td>
+    <td><%= retiree.pet_story %></td>
+    <td><%= retiree.what_are_you_doing %></td>
+    <td><%= retiree.message_to_ceo %></td>
+<% if false %>
+    <td><%= link_to 'Show', retiree %></td>
+    <td><%= link_to 'Edit', edit_retiree_path(retiree) %></td>
+    <td><%= link_to 'Destroy', retiree, :confirm => 'Are you sure?', :method => :delete %></td>
+<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Retiree', new_retiree_path %>

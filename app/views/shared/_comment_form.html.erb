@@ -1,0 +1,13 @@
+<%= form_for @comment,  :url => postcomment_path do |f|  %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment_text,  :rows => 3, :cols => 40,  :placeholder => 'Enter comment here...' %>
+     <%= f.fields_for :story do |uf| %>
+  </div>
+  <div class="actions">
+   
+    <%= f.submit "Submit" %>
+  </div>
+  <% end %>
+<% end %>
