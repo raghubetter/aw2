@@ -2,7 +2,9 @@ class RetireesController < ApplicationController
   # GET /retirees
   # GET /retirees.xml
   def index
-    @retirees = Retiree.all
+   # @retirees = Retiree.all
+    @retirees = Retiree.paginate(:page => params[:page])
+    @title = "Retiree wisdom"
 
     respond_to do |format|
       format.html # index.html.erb

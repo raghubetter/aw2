@@ -2,10 +2,12 @@
   <%= link_to logo, root_path %>
   <nav class="round">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Top Stories", root_path %></li>
       <% if signed_in? %>
-        <li><%= link_to "Profile", current_user %></li>
-        <li><%= link_to "Users", users_path %></li>
+      <% if false%>  
+        <li> <%= link_to "Profile", current_user %> </li> 
+        <li><%= link_to "Users", users_path %></li> 
+      <% end %>
         <li><%= link_to "Post Story", poststory_path %></li>
         <li><%= link_to "Retiree", retiree_path %></li>
         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
