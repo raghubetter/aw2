@@ -13,12 +13,14 @@ SampleApp::Application.routes.draw do
   
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :microposts,    :only => [:create, :destroy]
-  resources :stories,    :only => [:create, :destroy, :show]
+  resources :stories,    :only => [:create, :destroy, :show, :upvote, :downvote]
    resources :comments,    :only => [:create, :destroy, :new, :show]
   resources :relationships, :only => [:create, :destroy]
   
   root :to => "pages#home"
 
+  match '/upvote', :to => 'stories#upvote'
+  match '/downvote', :to => 'stories#downvote'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'

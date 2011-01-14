@@ -6,27 +6,30 @@
         <%#*<h1 class="micropost">What's up?</h1>%>
         <%#= render 'shared/micropost_form' %>
       </td>
-  <tr>
-    <table class="micropost" summary="stories listing">
-       <% @stories.each do |story| @temp_story_id = story.id %>
-         <tr>
-            <td class="main">votes <%=story.votes%> <a href="<%= story.url %> "><%=@count1%>     <%= story.title %></a>
-          <br> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
- <br> <%=story.comments.count%>
- <%= link_to "Comment", story_path(@temp_story_id)%></td>
-       </tr>
-      <% end %>
-</table>
-                   </tr>
+      <tr>
+        <table class="micropost" summary="stories listing">
+          <% @stories.each do |story| @temp_story_id = story.id %>
+          <tr><td> <%= button_to 'vote up', upvote_path(:story_id => @temp_story_id) %></td></tr>
+          <tr> 
+            <td <%=image_tag(story.photo_path1) %></td>
+            <td class="main">votes <%=story.votes%> <a href="<%= story.url %> ">              <%=@count1%>     <%= story.title %></a>
+              <br> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
+              <br> <%=story.comments.count%>
+              <%= link_to "Comment", story_path(@temp_story_id)%></td>
+          </tr>
+          <tr><td> <%= button_to 'vote down', downvote_path(:story_id => @temp_story_id) %></td></tr>
+        <% end %>
+      </table>
+    </tr>
   </table>
 
 <% else %>
 
-<h1>Autoworker Community</h1>
-<p>
+  <h1>Autoworker Community</h1>
+  <p>
   This is the home page for the <a href="http://autoworker.com/">autoworker community</a> autoworker communitylication.
-</p>
+  </p>
 
-<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 
 <% end %>

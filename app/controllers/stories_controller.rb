@@ -19,6 +19,16 @@ class StoriesController < ApplicationController
   #   render 'stories/show'
   end
 
+  def upvote
+    @story = Story.find(5)
+    @story.upvote(5)
+  end
+
+  def downvote
+    #Story.find(params[:id]).increment(:votes)
+    Story.downvote
+  end
+
   def destroy
     @story.destroy
     redirect_back_or root_path

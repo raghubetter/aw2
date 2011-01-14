@@ -6,6 +6,8 @@ class CreateStories < ActiveRecord::Migration
       t.string :url
       t.integer :user_id
       t.integer :votes
+      t.string :photo_path1
+      t.string :video_path1
 
       t.timestamps
     end

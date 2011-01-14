@@ -1,4 +1,3 @@
-img_tag - stories
 
 cleanup routes.rb file
 
@@ -12,10 +11,11 @@ will_paginate for the retiree page
 
 vote up button on the home page
 
-
+add photo upload for post story form
 
 done
 retiree model .. get all the fields
 retiree scaffold
 email to Raghu
 img tag for retiree
+img_tag - stories
