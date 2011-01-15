@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115145516) do
+ActiveRecord::Schema.define(:version => 20110115160414) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment_text"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(:version => 20110115145516) do
     t.string   "message_to_ceo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   create_table "stories", :force => true do |t|

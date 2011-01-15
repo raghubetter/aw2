@@ -16,7 +16,9 @@
 
 <% @retirees.each do |retiree| %>
   <tr>
-    <td><%=image_tag(retiree.photo_path1) %></td>
+    <% if retiree.photo.exists? then%>
+    <td><%=image_tag retiree.photo.url(:thumb) %></td>
+  <% end %>
     <td><%= retiree.first_name %> <%= retiree.last_name %></td>
     <td><%= retiree.years_worked %></td>
     <td><%= retiree.plant %></td>
