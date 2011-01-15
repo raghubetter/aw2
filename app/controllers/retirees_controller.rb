@@ -3,7 +3,8 @@ class RetireesController < ApplicationController
   # GET /retirees.xml
   def index
    # @retirees = Retiree.all
-    @retirees = Retiree.paginate(:page => params[:page], :per_page => 5)
+    @retirees = Retiree.paginate(:page => params[:page], :per_page => 5,
+                                 :order => 'created_at DESC')
     @title = "Retiree wisdom"
 
     respond_to do |format|

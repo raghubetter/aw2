@@ -4,4 +4,5 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+require '~/code/ruby/aw2/lib/tasks/seed.rake'
 SampleApp::Application.load_tasks

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       @micropost = Micropost.new
       @story = Story.new
       @count1 = 1
-     @stories = Story.find(:all, :include => :comments)
+     @stories = Story.find(:all, :include => :comments, :order => 'votes DESC')
     # @stories = Story.paginate(:page => params[:page])
       @feed_items = current_user.feed.paginate(:page => params[:page])
     end
