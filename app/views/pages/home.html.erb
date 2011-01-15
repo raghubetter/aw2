@@ -11,7 +11,9 @@
           <% @stories.each do |story|  %>
           <tr><td> <%= button_to 'vote up', upvote_story_path(story), :method => :get %></td></tr>
           <tr> 
-            <td <%=image_tag('rails.png') %></td>
+            <td <%if story.photo.exists? then %>
+                <%=image_tag story.photo.url(:thumb) %></td>
+            <% end %>
             <td class="main">votes <%=story.votes%> <a href="<%= story.url %> ">              <%=@count1%>     <%= story.title %></a>
               <br> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
               <br> <%=story.comments.count%>
