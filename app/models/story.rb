@@ -7,15 +7,12 @@ class Story < ActiveRecord::Base
 
   validates :user_id, :presence => true
 
-  def upvote(story_id)
-      story = Story.where(:story_id => story_id)
-      #story.votes += 1
-      story.increment(:votes)
-  end
+  def upvote
+     self.increment!(:votes)
+    end
 
-  def downvote(story_id)
-      story = Story.where(:story_id => story_id)
-      story.decrement(:votes)
+  def downvote
+    self.decrement!(:votes)
   end
 
 end

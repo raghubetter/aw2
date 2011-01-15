@@ -3,24 +3,27 @@ SampleApp::Application.routes.draw do
 
   resources :users do
     member do
-      get :following, :followers
+      #  get :following, :followers
     end
   end
 
-   resources :stories do
-     resources :comments
-     end
+  resources :stories do
+    member do
+      get  :upvote, :downvote
+    end
+    resources :comments
+  end
   
   resources :sessions,      :only => [:new, :create, :destroy]
-  resources :microposts,    :only => [:create, :destroy]
-  resources :stories,    :only => [:create, :destroy, :show, :upvote, :downvote]
-   resources :comments,    :only => [:create, :destroy, :new, :show]
-  resources :relationships, :only => [:create, :destroy]
+  #  resources :microposts,    :only => [:create, :destroy]
+  #resources :stories,    :only => [:create, :destroy, :show]
+  resources :comments,    :only => [:create, :destroy, :new, :show]
+  #  resources :relationships, :only => [:create, :destroy]
   
   root :to => "pages#home"
 
-  match '/upvote', :to => 'stories#upvote'
-  match '/downvote', :to => 'stories#downvote'
+  # match '/upvote', :to => 'stories#upvote'
+  #match '/downvote', :to => 'stories#downvote'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
@@ -29,8 +32,8 @@ SampleApp::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   match '/poststory', :to => 'pages#poststory'
   match '/postcomment', :to => 'comments#create'
-   match '/showstory', :to => 'stories#show'
-   match '/retiree', :to => 'retirees#index'
+  #match '/showstory', :to => 'stories#show'
+  match '/retiree', :to => 'retirees#index'
 
   resources :retirees
   get "retiree/index"

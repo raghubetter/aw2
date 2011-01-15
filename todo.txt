@@ -1,16 +1,22 @@
+home page (top stories)
+vote up  and vote down buttons - make them work
+layout
+upload images and manage them
 
-cleanup routes.rb file
+Retirees Page
+search
+layout
+upload images and manage them
 
-search - retiress page
+Cleanup routes.rb file
 
-move to slice
+move to slice host
 
 jquery
 
 will_paginate for the retiree page
 
-vote up button on the home page
-
+upvote / downvote comments
 add photo upload for post story form
 
 done
