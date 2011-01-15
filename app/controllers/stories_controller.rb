@@ -37,7 +37,7 @@ class StoriesController < ApplicationController
 
 
   def find_story
-    @story = Story.find(params[:story_id]) if params[:story_id]
+    @story = Story.find(params[:id]) if params[:id]
   end
 
   private :find_story
