@@ -9,7 +9,7 @@
       <tr>
         <table class="micropost" summary="stories listing">
           <% @stories.each do |story|  %>
-          <tr><td> <%= button_to 'vote up', upvote_story_path(story), :method => :get %></td></tr>
+            <tr><td> <%= link_to image_tag("arrow_up.png", :size=>"35x20"), upvote_story_path(story), :method => :get %></td></tr>
           <tr> 
             <td <%if story.photo.exists? then %>
                 <%=image_tag story.photo.url(:thumb) %></td>
@@ -19,7 +19,7 @@
               <br> <%=story.comments.count%>
               <%= link_to "Comment", story_path(story)%></td>
           </tr>
-          <tr><td> <%=link_to image_tag("testarrow.png"), downvote_story_path(story), :method => :get %></td>
+          <tr><td> <%=link_to image_tag("arrow_down.png", :size=>"35x20"), downvote_story_path(story), :method => :get %></td>
             <td>-------------------------------------------------------------------------------------------------------------------------------</td></tr>
         <% end %>
       </table>

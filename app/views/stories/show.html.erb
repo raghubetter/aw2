@@ -4,12 +4,12 @@
   <tr>
   <table class="micropost" summary="comments listing">
     <% for comment in  @story.comments %>
-          <tr><td> <%= button_to 'vote up', upvote_story_comment_path(comment.id), :method => :get %></td></tr>
+      <tr><td> <%= link_to image_tag("arrow_up.png", :size=>"35x20"), upvote_story_comment_path(comment.id), :method => :get %></td></tr>
       <tr>
         <td class="main">votes <%=comment.votes%>  <%=comment.comment_text%>
         <br> <font size="1">  Posted <%= time_ago_in_words(comment.created_at) %> ago
         by <%=comment.user_id%></font>
-          <tr><td> <%= button_to 'down vote', downvote_story_comment_path(comment.id), :method => :get %></td></tr>
+      <tr><td> <%= link_to image_tag("arrow_down.png", :size => "35x20"), downvote_story_comment_path(comment.id), :method => :get %></td></tr>
           <td>------------------------------------------------------------------------------------------------------------------------------</td>
           <br>
       </tr>
