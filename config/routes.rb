@@ -11,7 +11,11 @@ SampleApp::Application.routes.draw do
     member do
       get  :upvote, :downvote
     end
-    resources :comments
+    resources :comments do
+      member do
+        get :upvote, :downvote
+      end
+    end
   end
   
   resources :sessions,      :only => [:new, :create, :destroy]

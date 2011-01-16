@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :authenticate, :only => [:create, :destroy]
-
+  before_filter :find_comment, :only => [:upvote, :downvote,]
+  
   def new
     @comment = Comment.new
   end
@@ -25,13 +26,23 @@ class CommentsController < ApplicationController
 
   def show
    @story = Story.find(params[:id])
-   # @story = Story.find(10)
-   # @microposts = @user.microposts.paginate(:page => params[:page])
-     #@title = @user.name
-  #  @current_comments = Story.find_by_id(params[:story_id], :include => :comments)
       @current_comments = @story.comments
-        #Comment.find_by_sql("select * from comments where story_id = " + params[:user_id])
       @comment = Comment.new if signed_in?
   end
 
+  def upvote
+    @comment.upvote
+    redirect_back_or root_path
+  end
+
+  def downvote 
+    @comment.downvote
+    redirect_back_or root_path
+  end
+
+  def find_comment
+    @comment = Comment.find(params[:id]) if params[:id]
+  end
+
+  private :find_comment
 end

@@ -14,7 +14,7 @@ class Story < ActiveRecord::Base
 
   def upvote
      self.increment!(:votes)
-    end
+  end
 
   def downvote
     self.decrement!(:votes)

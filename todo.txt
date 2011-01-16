@@ -2,6 +2,9 @@ home page (top stories)
 vote up  and vote down buttons - make them work
 layout
 upload images and manage them
+userid in the comments page - hardcoded 101 now
+add votes column to comments table
+TinyMCE_hammer plugin
 
 Retirees Page
 search

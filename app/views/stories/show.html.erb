@@ -3,11 +3,14 @@
   <tr>
   <table class="micropost" summary="comments listing">
     <% @current_comments.each do |comment| %>
+          <tr><td> <%= button_to 'vote up', upvote_story_comment_path(comment), :method => :get %></td></tr>
       <tr>
-        <td class="main"> <%=comment.comment_text%>
+        <td class="main">votes <%=comment.votes%>  <%=comment.comment_text%>
         <br> <font size="1">  Posted <%= time_ago_in_words(comment.created_at) %> ago
         by <%=comment.user_id%></font>
-        <br>
+          <tr><td> <%= button_to 'down vote', downvote_story_comment_path(comment), :method => :get %></td></tr>
+          <td>------------------------------------------------------------------------------------------------------------------------------</td>
+          <br>
       </tr>
     <% end %>
 

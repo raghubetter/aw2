@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115160414) do
+ActiveRecord::Schema.define(:version => 20110115202757) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment_text"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110115160414) do
     t.boolean  "moderated"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "votes"
   end
 
   create_table "microposts", :force => true do |t|
