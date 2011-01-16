@@ -31,8 +31,9 @@ class CommentsController < ApplicationController
   end
 
   def upvote
+    p @comment.story
     @comment.upvote
-    redirect_back_or root_path
+    redirect_back_or story_path(@comment.story)
   end
 
   def downvote 
@@ -41,6 +42,8 @@ class CommentsController < ApplicationController
   end
 
   def find_comment
+    p '*********************************************************'
+    p params
     @comment = Comment.find(params[:id]) if params[:id]
   end
 

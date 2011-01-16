@@ -19,7 +19,8 @@
               <br> <%=story.comments.count%>
               <%= link_to "Comment", story_path(story)%></td>
           </tr>
-          <tr><td> <%= button_to 'vote down', downvote_story_path(story), :method => :get %></td></tr>
+          <tr><td> <%=link_to image_tag("testarrow.png"), downvote_story_path(story), :method => :get %></td>
+            <td>-------------------------------------------------------------------------------------------------------------------------------</td></tr>
         <% end %>
       </table>
     </tr>

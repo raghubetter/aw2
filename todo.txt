@@ -3,7 +3,6 @@ vote up  and vote down buttons - make them work
 layout
 upload images and manage them
 userid in the comments page - hardcoded 101 now
-add votes column to comments table
 TinyMCE_hammer plugin
 
 Retirees Page
@@ -17,10 +16,13 @@ move to slice host
 
 jquery
 
+http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos-to-your-ruby-on-rails-web-app
+
 will_paginate for the retiree page
 
 upvote / downvote comments
 add photo upload for post story form
+add votes column to comments table
 
 done
 retiree model .. get all the fields

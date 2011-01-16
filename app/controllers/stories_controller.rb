@@ -13,9 +13,10 @@ class StoriesController < ApplicationController
   end
 
   def show
+    p params
+    p '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
     @story = Story.find(params[:id])
-    @current_comments = @story.comments
-    @comment = Comment.new(params[:comment])
+     @comment = Comment.new(params[:comment])
       
     #   render 'stories/show'
   end

@@ -1,9 +1,11 @@
+require 'application_constant'
 class RetireesController < ApplicationController
+  
   # GET /retirees
   # GET /retirees.xml
   def index
    # @retirees = Retiree.all
-    @retirees = Retiree.paginate(:page => params[:page], :per_page => 5,
+    @retirees = Retiree.paginate(:page => params[:page], :per_page => ApplicationConstant::PER_PAGE,
                                  :order => 'created_at DESC')
     @title = "Retiree wisdom"
 
