@@ -3,12 +3,12 @@
 <table>
   <tr>
     <th>  </th>
-    <th>Name</th>
-    <th>Years worked</th>
-    <th>Plant</th>
+    <th></th>
+    <th></th>
+    <th></th>
     <th>Pet story</th>
-    <th>What are you doing now</th>
-    <th>Message to ceo</th>
+    <th>Status</th>
+    <th>Message to CEO</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,11 +17,10 @@
 <% @retirees.each do |retiree| %>
   <tr>
   <% if retiree.photo.exists? then%>
-    <td><%=image_tag retiree.photo.url(:thumb) %></td>
+    <td><%=image_tag retiree.photo.url(:thumb) %> <br>
   <% end %>
-    <td><%= retiree.first_name %> <%= retiree.last_name %></td>
-    <td><%= retiree.years_worked %></td>
-    <td><%= retiree.plant %></td>
+   <%= retiree.first_name %> <%= retiree.last_name %></td>
+    <td><%= retiree.years_worked %> years at <%= retiree.plant %></td>
     <td><%= retiree.pet_story %></td>
     <td><%= retiree.what_are_you_doing %></td>
     <td><%= retiree.message_to_ceo %></td>

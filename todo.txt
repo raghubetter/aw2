@@ -1,32 +1,39 @@
 home page (top stories)
-vote up  and vote down buttons - make them work
+=========================
 layout
-upload images and manage them
-userid in the comments page - hardcoded 101 now
+username in the comments page - hardcoded 101 now
 TinyMCE_hammer plugin
+use JQUERY to upvote / downvote instead of refreshing page
+
 
 Retirees Page
+=============
 search
 layout
-upload images and manage them
+embed video link to be played on the same page
 
-Cleanup routes.rb file
 
-move to slice host
+slice host
+==========
+config - rvm, passenger
 
 jquery
 
 http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos-to-your-ruby-on-rails-web-app
 
-will_paginate for the retiree page
 
+done
+==========
+will_paginate for the retiree page
+upload images and manage them - post stories
+Cleanup routes.rb file
 upvote / downvote comments
 add photo upload for post story form
 add votes column to comments table
-
-done
 retiree model .. get all the fields
 retiree scaffold
 email to Raghu
 img tag for retiree
 img_tag - stories
+vote up  and vote down buttons - make them work
+upload images and manage them - retiree page
