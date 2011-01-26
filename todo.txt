@@ -15,8 +15,6 @@ embed video link to be played on the same page
 
 slice host
 ==========
-config - rvm, passenger
-cap depoly -- get it working
 jquery
 
 http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos-to-your-ruby-on-rails-web-app
@@ -24,6 +22,8 @@ http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos
 
 done
 ==========
+config - rvm, passenger
+cap depoly -- get it working
 will_paginate for the retiree page
 upload images and manage them - post stories
 Cleanup routes.rb file
