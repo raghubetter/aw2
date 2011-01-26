@@ -5,6 +5,8 @@ log/*.log
 tmp/**/*
 tmp/*
 doc/api
+config/deploy.rb
+config/deploy*.rb
 doc/app
 *.swp
 *~

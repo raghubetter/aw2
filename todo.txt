@@ -16,7 +16,7 @@ embed video link to be played on the same page
 slice host
 ==========
 config - rvm, passenger
-
+cap depoly -- get it working
 jquery
 
 http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos-to-your-ruby-on-rails-web-app
