@@ -9,17 +9,18 @@
       <tr>
         <table class="micropost" summary="stories listing">
           <% @stories.each do |story|  %>
-            <tr><td> <%= link_to image_tag("arrow_up.png", :size=>"35x20"), upvote_story_path(story), :method => :get, :remote => true %></td></tr>
+            <tr><td> <%= link_to image_tag("thumbsup.png", :size=>"60x60"), upvote_story_path(story), :method => :get, :remote => true %></td></tr>
             <td class="main">votes <%=story.votes%> </td>
             <tr><td <%if story.photo.exists? then %>
-                  <%=image_tag story.photo.url(:thumb), :size => "60x60" %></td>
+                  <%=image_tag story.photo.url(:thumb), :size => "100x150" %></td>
               <% end %>
-              <td class="main"><a href="<%= story.url %> ">              <%=@count1%>     <%= story.title %></a>
-                <br> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
-                <br> <%=story.comments.count%>
+              <td class="main"><a href="<%= story.url %> "><%=@count1%><%= story.title %></a>
+                <br/><%= story.teaser %>
+                <br/> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
+                <br/> <%=story.comments.count%>
                 <%= link_to "Comment", story_path(story)%></td>
             </tr>
-            <tr><td> <%=link_to image_tag("arrow_down.png", :size=>"35x20"), downvote_story_path(story), :method => :get %></td>
+            <tr><td> <%=link_to image_tag("thumbsdown.png", :size=>"60x60"), downvote_story_path(story), :method => :get %></td>
               <td>-------------------------------------------------------------------------------------------------------------------------------</td></tr>
           <% end %>
         </table>

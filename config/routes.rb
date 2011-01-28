@@ -39,7 +39,11 @@ SampleApp::Application.routes.draw do
   #match '/showstory', :to => 'stories#show'
   match '/retiree', :to => 'retirees#index'
 
-  resources :retirees
+  resources :retirees do
+    collection do
+      post :find_retiree
+    end
+  end
   get "retiree/index"
   get "retiree/update"
   get "retiree/delete"
@@ -47,6 +51,7 @@ SampleApp::Application.routes.draw do
   get "comments/create"
   get "comments/destroy"
   get "comments/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

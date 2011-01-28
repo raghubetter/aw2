@@ -1,3 +1,10 @@
+<div>
+  <% form_for :retiree, :url => find_retiree_retirees_path do |f| %>
+  <p>Search Retiree</p>
+    <%= f.text_field :name %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
 <h1>Listing retirees</h1>
 
 <table>
@@ -14,25 +21,25 @@
     <th></th>
   </tr>
 
-<% @retirees.each do |retiree| %>
-  <tr>
-  <% if retiree.photo.exists? then%>
-    <td><%=image_tag retiree.photo.url(:thumb) %> <br>
-  <% end %>
-   <%= retiree.first_name %> <%= retiree.last_name %></td>
-    <td><%= retiree.years_worked %> years at <%= retiree.plant %></td>
-    <td><%= retiree.pet_story %></td>
-    <td><%= retiree.what_are_you_doing %></td>
-    <td><%= retiree.message_to_ceo %></td>
+  <% @retirees.each do |retiree| %>
+    <tr>
+      <% if retiree.photo.exists? then%>
+        <td><%=image_tag retiree.photo.url(:thumb) %> <br>
+        <% end %>
+        <%= retiree.first_name %> <%= retiree.last_name %></td>
+      <td><%= retiree.years_worked %> years at <%= retiree.plant %></td>
+      <td><%= retiree.pet_story %></td>
+      <td><%= retiree.what_are_you_doing %></td>
+      <td><%= retiree.message_to_ceo %></td>
 
-<% if false %>
-    <td><%= link_to 'Show', retiree %></td>
-    <td><%= link_to 'Edit', edit_retiree_path(retiree) %></td>
-    <td><%= link_to 'Destroy', retiree, :confirm => 'Are you sure?', :method => :delete %></td>
-<% end %>
-  </tr>
-<% end %>
-<%= will_paginate @retirees %>
+      <% if false %>
+        <td><%= link_to 'Show', retiree %></td>
+        <td><%= link_to 'Edit', edit_retiree_path(retiree) %></td>
+        <td><%= link_to 'Destroy', retiree, :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  <%= will_paginate @retirees %>
 </table>
 
 <br />

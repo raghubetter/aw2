@@ -15,6 +15,17 @@ class RetireesController < ApplicationController
     end
   end
 
+  def find_retiree
+    @retirees = Retiree.paginate(:conditions => ["first_name LIKE ? OR last_name like ? OR years_worked = ?", params[:retiree][:name],params[:retiree][:name],params[:retiree][:name]], :page => params[:page], :per_page => ApplicationConstant::PER_PAGE,
+                                 :order => 'created_at DESC')
+    @title = "Found #{@retirees.size.to_s} results "
+
+    respond_to do |format|
+      format.html {render :action => :index}
+      format.xml  { render :xml => @retirees }
+    end
+  end
+
   # GET /retirees/1
   # GET /retirees/1.xml
   def show
@@ -49,7 +60,8 @@ class RetireesController < ApplicationController
 
     respond_to do |format|
       if @retiree.save
-        format.html { redirect_to(@retiree, :notice => 'Retiree was successfully created.') }
+         flash[:notice] =  'Retiree was successfully created.'
+        format.html { redirect_to(:action=>"show", :controller=>"retirees", :id=>@retiree.id) }
         format.xml  { render :xml => @retiree, :status => :created, :location => @retiree }
       else
         format.html { render :action => "new" }
