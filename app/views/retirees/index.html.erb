@@ -5,20 +5,20 @@
     <%= f.submit "Search" %>
   <% end %>
 </div>
-<h1>Listing retirees</h1>
+<h2>Listing retirees</h2>
 
 <table>
   <tr>
-    <th>  </th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th>Pet story</th>
-    <th>Status</th>
+    <th class="retiree_th"> Name</th>
+    <th class="retiree_th">Years</th>
+    <th class="retiree_th">Pet Story</th>
+    <th class="retiree_th">Current Hobby</th>
+    <th class="retiree_th">Ceo's Message</th>
+    <!--<th>Status</th>
     <th>Message to CEO</th>
     <th></th>
     <th></th>
-    <th></th>
+    <th></th-->
   </tr>
 
   <% @retirees.each do |retiree| %>
@@ -27,14 +27,16 @@
         <td><%=image_tag retiree.photo.url(:thumb) %> <br>
         <% end %>
         <%= retiree.first_name %> <%= retiree.last_name %></td>
-      <td><%= retiree.years_worked %> years at <%= retiree.plant %></td>
-      <td><%= retiree.pet_story %></td>
-      <td><%= retiree.what_are_you_doing %></td>
-      <td><%= retiree.message_to_ceo %></td>
+      <td class="retiree_experience"><%= retiree.years_worked %> years at <%= retiree.plant %></td>
+      <td class="retiree_petstory"><%= retiree.pet_story %></td>
+      <td class="retiree_status"><%= retiree.what_are_you_doing %></td>
+      <td class="retiree_ceomsg"><%= retiree.message_to_ceo %></td>
 
-      <% if false %>
+     
+        
+        <td><%= link_to 'Edit', edit_retiree_path(retiree) if current_user == retiree.user %></td>
+         <% if false %>
         <td><%= link_to 'Show', retiree %></td>
-        <td><%= link_to 'Edit', edit_retiree_path(retiree) %></td>
         <td><%= link_to 'Destroy', retiree, :confirm => 'Are you sure?', :method => :delete %></td>
       <% end %>
     </tr>
@@ -42,6 +44,6 @@
   <%= will_paginate @retirees %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Retiree', new_retiree_path %>

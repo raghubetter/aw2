@@ -133,6 +133,55 @@ td.sidebar {
   background: #ffc;
 }
 
+th.retiree_th {
+  #width: 100%;
+  height: 10px;
+  padding: 15px;
+  #border: 10px white;
+  vertical-align: top;
+  background: #00FF00;
+  border: 5px solid white;
+}
+  
+td.retiree_experience {
+  width: 20%;
+  height: 20px;
+  padding: 15px;
+  border: 10px white;
+  vertical-align: top;
+  background: #ffc;
+  border: 5px solid white;
+}
+
+td.retiree_petstory {
+  width: 25%;
+  height: 20px;
+  padding: 15px;
+  border: 10px white;
+  vertical-align: top;
+  background: #CCFFCC;
+  border: 5px solid white;
+}
+
+td.retiree_status {
+  width: 30%;
+  height: 20px;
+  padding: 15px;
+  border: 10px white;
+  vertical-align: top;
+  background: #66FFFF;
+  border: 5px solid white;
+}
+
+td.retiree_ceomsg {
+  width: 30%;
+  height: 20px;
+  padding: 15px;
+  border: 5px solid white;
+  vertical-align: top;
+  background: #FFCCCC;
+  margin: 5px;
+}
 .profile img.gravatar {
   border: 1px solid #999;
   margin-bottom: -15px;

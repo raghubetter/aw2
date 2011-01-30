@@ -1,9 +1,15 @@
 home page (top stories)
 =========================
-layout
+logo - with lots of people ... working
+layout - retiree page
+layout - top stories page
+postgres or mysql on slice
+put realistic seed data
 username in the comments page - hardcoded 101 now
-TinyMCE_hammer plugin
 use JQUERY to upvote / downvote instead of refreshing page
+
+
+get some early users to test it.
 
 
 Retirees Page
@@ -22,6 +28,7 @@ http://paulsturgess.co.uk/articles/show/64-allowing-users-to-post-youtube-videos
 
 done
 ==========
+TinyMCE_hammer plugin
 config - rvm, passenger
 cap depoly -- get it working
 will_paginate for the retiree page

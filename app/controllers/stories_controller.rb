@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
       flash[:success] = "Story created!"
       redirect_to root_path
     else
-      render 'pages/home'
+      render 'shared/_story_form'
     end
   end
 
@@ -23,7 +23,8 @@ class StoriesController < ApplicationController
 
   def upvote
     @story.upvote
-    redirect_to root_path
+    flash[:notice] = "Upvoted successfully"
+    redirect_to :controller => 'home', :action => :index
   end
 
   def downvote

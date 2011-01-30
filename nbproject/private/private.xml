@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/views/users/show.html.erb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/controllers/retirees_controller.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/views/retirees/index.html.erb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/config/routes.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/controllers/stories_controller.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/controllers/pages_controller.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/views/pages/home.html.erb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/models/story.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/models/retiree.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/models/user.rb</file>
+        <file>file:/home/srini/code/ruby/aw3/aw2/app/views/retirees/_form.html.erb</file>
+    </open-files>
 </project-private>

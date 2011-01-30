@@ -9,6 +9,8 @@ class Story < ActiveRecord::Base
 
   validates :title, :presence => true, :length => { :maximum => 140 }
   validates :url, :presence => true, :length => { :maximum => 140 }
+   validates :teaser, :presence => true, :length => { :maximum => 250 }
+
 
   validates :user_id, :presence => true
 

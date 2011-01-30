@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
                        :source  => :follower
   has_many :stories
   has_many :comments
+  has_many :retirees
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   

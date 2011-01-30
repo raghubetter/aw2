@@ -56,8 +56,10 @@ class RetireesController < ApplicationController
   # POST /retirees
   # POST /retirees.xml
   def create
-    @retiree = Retiree.new(params[:retiree])
+    p params
 
+    @retiree = Retiree.new(params[:retiree])
+    @retiree.user_id = current_user.id
     respond_to do |format|
       if @retiree.save
          flash[:notice] =  'Retiree was successfully created.'

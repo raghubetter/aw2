@@ -3,4 +3,6 @@ class Retiree < ActiveRecord::Base
     :styles =>{
             :thumb=>"100x100#",
             :small=>"400x400"}
+
+  belongs_to :user
 end
