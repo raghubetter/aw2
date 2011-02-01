@@ -8,32 +8,35 @@
       </td>
       <tr>
         <table class="micropost" summary="stories listing">
+          <tr><td>team, please quickly scan the main story and keep the discussion here </td></tr>
           <% @stories.each do |story|  %>
-            <tr><td> <%= link_to image_tag("thumbsup.png", :size=>"60x60"), upvote_story_path(story), :method => :get, :remote => true %></td></tr>
+            <tr><td> <%= link_to image_tag("thumbsup.png", :size=>"30x30"), upvote_story_path(story), :method => :get, :remote => true %></td></tr>
             <td class="main">votes <%=story.votes%> </td>
             <tr><td <%if story.photo.exists? then %>
-                  <%=image_tag story.photo.url(:thumb), :size => "100x150" %></td>
-              <% end %>
-              <td class="main"><a href="<%= story.url %> "><%=@count1%><%= story.title %></a>
-                <br/><%= story.teaser %>
-                <br/> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
-                <br/> <%=story.comments.count%>
-                <%= link_to "Comment", story_path(story)%></td>
-            </tr>
-            <tr><td> <%=link_to image_tag("thumbsdown.png", :size=>"60x60"), downvote_story_path(story), :method => :get %></td>
-              <td>-------------------------------------------------------------------------------------------------------------------------------</td></tr>
-          <% end %>
-        </table>
-      </tr>
-    </table>
+                  <%=image_tag story.photo.url(:thumb), :size => "100x100" %></td>
+              <% else %>
+                <%=image_tag("logo6.jpeg",  :size => "100x100") %></td>
+            <% end %>
+            <td class="main"><a href="<%= story.url %> "><%=@count1%><%= story.title %></a>
+              <br/><%= story.teaser %>
+              <br/> <font size="1">  Posted <%= time_ago_in_words(story.created_at) %> ago.</font>
+              <br/> <%=story.comments.count%>
+              <%= link_to "Comment", story_path(story)%></td>
+          </tr>
+          <tr><td> <%=link_to image_tag("thumbsdown.png", :size=>"30x30"), downvote_story_path(story), :method => :get %></td>
+            <td>-------------------------------------------------------------------------------------------------------------------------------</td></tr>
+        <% end %>
+      </table>
+    </tr>
+  </table>
 
-  <% else %>
+<% else %>
 
-    <h1>Autoworker Community</h1>
-    <p>
-    This is the home page for the <a href="http://autoworker.com/">autoworker community</a> autoworker communitylication.
-    </p>
+  <h1>Autoworker Community</h1>
+  <p>
+  This is the home page for the <a href="http://autoworker.com/">autoworker community</a> autoworker communitylication.
+  </p>
 
-    <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 
-  <% end %>
+<% end %>

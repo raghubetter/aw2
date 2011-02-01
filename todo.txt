@@ -7,7 +7,10 @@ postgres or mysql on slice
 put realistic seed data
 username in the comments page - hardcoded 101 now
 use JQUERY to upvote / downvote instead of refreshing page
-
+forum
+seeds.rb 
+remove bad language from comments / stories
+only few users post stories in the beginning.
 
 get some early users to test it.
 
