@@ -10,7 +10,7 @@
         <table class="micropost" summary="stories listing">
           <tr><td>team, please quickly scan the main story and keep the discussion here </td></tr>
           <% @stories.each do |story|  %>
-            <tr><td> <%= link_to image_tag("thumbsup.png", :size=>"30x30"), upvote_story_path(story), :method => :get, :remote => true %></td></tr>
+            <tr><td> <%= link_to image_tag("thumbsup.png", :size=>"30x30"), upvote_story_path(story), :method => :get %></td></tr>
             <td class="main">votes <%=story.votes%> </td>
             <tr><td <%if story.photo.exists? then %>
                   <%=image_tag story.photo.url(:thumb), :size => "100x100" %></td>

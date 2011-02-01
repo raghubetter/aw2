@@ -13,18 +13,14 @@ class StoriesController < ApplicationController
   end
 
   def show
-    p params
-    p '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
     @story = Story.find(params[:id])
      @comment = Comment.new(params[:comment])
-      
-    #   render 'stories/show'
   end
 
   def upvote
     @story.upvote
     flash[:notice] = "Upvoted successfully"
-    redirect_to :controller => 'home', :action => :index
+    redirect_to root_path
   end
 
   def downvote
