@@ -1,5 +1,5 @@
 .container {
-  width: 805px;
+  width: 80%;
 }
 
 body {
@@ -47,8 +47,8 @@ a:visited {
 
 nav {
   float: right;
-  background: yellow;
-  padding: 0 0.7em;
+  background: #eeeeee;
+  padding: 0 0.3em;
   white-space: nowrap;
 }
 
@@ -134,13 +134,12 @@ td.sidebar {
 }
 
 th.retiree_th {
-  #width: 100%;
-  height: 10px;
+  height: 5px;
   padding: 15px;
-  #border: 10px white;
+  border: 10px white;
   vertical-align: top;
   background: #00FF00;
-  border: 5px solid white;
+  border: 3px solid white;
 }
   
 td.retiree_experience {
