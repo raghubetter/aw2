@@ -1,5 +1,5 @@
 .container {
-  width: 80%;
+  width: 70%;
 }
 
 body {
@@ -105,24 +105,26 @@ a.signup_button {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 footer nav {
+  font-size:10px;
+  font-weight:bold;
   float: none;
 }
 
 /* User show page */
 
 table.profile {
-  width: 100%;
+  width: 80%;
   margin-bottom: 0;
 }
 
 td.main {
-  width: 70%;
+  width: 60%;
   padding: 1em;
 }
 
@@ -252,7 +254,7 @@ table.microposts {
 }
 
 table.microposts tr {
-  height: 70px;
+  height: 60px;
 }
 
 table.microposts tr td.gravatar {

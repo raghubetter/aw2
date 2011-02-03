@@ -19,16 +19,18 @@
                 <li> <%= link_to "Profile", current_user %> </li>
                 <li><%= link_to "Users", users_path %></li>
               <% end %>
+              <li><%=link_to "Moderate Comments", comments_path  if current_user.admin? %></li>
               <li><%= link_to "Post Story", poststory_path %></li>
               <li><%= link_to "Retiree", retiree_path %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <% end %>
           </ul>
         </nav>
-        <br/>
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
+        <br/>
+
         <%= yield %>
       </section>
       <%= render 'layouts/footer' %>

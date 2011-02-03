@@ -1,6 +1,22 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy]
-  before_filter :find_comment, :only => [:upvote, :downvote,]
+  before_filter :authenticate
+  before_filter :find_comment, :only => [:approve,:reject,:upvote, :downvote,]
+
+  def index
+    @comments = Comment.find(:all, :conditions => {:moderated => 0})
+  end
+
+  def approve
+    @comment.approved
+    flash[:success] = "comment Moderated Approved!"
+    redirect_to comments_path
+  end
+
+  def reject
+    @comment.rejected
+    flash[:success] = "comment Moderated Rejected"
+    redirect_to comments_path
+  end
   
   def new
     @comment = Comment.new
@@ -9,13 +25,14 @@ class CommentsController < ApplicationController
   def create
     @story = Story.find(params[:story_id])
     @comment = @story.comments.create(params[:comment])
+    @comment.moderated = Comment::DEFAULT
     # @comment  = current_user.comments.build(params[:comment])
-   # @comment  = Comment.new(params[:comment])
+    # @comment  = Comment.new(params[:comment])
     if @comment.save
-      flash[:success] = "comment created!"
+      flash[:success] = "comment added successfully! It will be published once approved by the moderator."
       redirect_to root_path
     else
- #   render 'pages/home'
+      #   render 'pages/home'
     end
   end
 
@@ -25,13 +42,12 @@ class CommentsController < ApplicationController
   end
 
   def show
-   @story = Story.find(params[:id])
-      @current_comments = @story.comments
-      @comment = Comment.new if signed_in?
+    @story = Story.find(params[:id])
+    @current_comments = @story.comments
+    @comment = Comment.new if signed_in?
   end
 
   def upvote
-    p @comment.story
     @comment.upvote
     redirect_back_or story_path(@comment.story)
   end
@@ -42,8 +58,6 @@ class CommentsController < ApplicationController
   end
 
   def find_comment
-    p '*********************************************************'
-    p params
     @comment = Comment.find(params[:id]) if params[:id]
   end
 

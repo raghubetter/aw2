@@ -10,16 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115202757) do
+ActiveRecord::Schema.define(:version => 20110203165909) do
 
   create_table "comments", :force => true do |t|
     t.string   "comment_text"
     t.integer  "story_id"
     t.integer  "user_id",      :default => 101
-    t.boolean  "moderated"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "votes"
+    t.integer  "moderated",    :default => 0
   end
 
   create_table "microposts", :force => true do |t|
@@ -65,10 +65,10 @@ ActiveRecord::Schema.define(:version => 20110115202757) do
     t.string   "url"
     t.integer  "user_id"
     t.integer  "votes"
-    t.string   "photo_path1"
-    t.string   "video_path1"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_path1"
+    t.string   "video_path1"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
