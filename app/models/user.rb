@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
   has_many :stories
   has_many :comments
   has_many :retirees
+
+  has_one :token # specify only one token at a time.
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
