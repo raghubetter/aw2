@@ -3,11 +3,11 @@
   <tr><%=@story.votes%>   <%=@story.title%></tr>
   <tr>
   <table class="micropost" summary="comments listing">
-    <% @comments = Comment.moderated(@story.id) %>
+    <% @comments = @story.comments %>
     <% for comment in   @comments%>
       <tr><td> <%= link_to image_tag("arrow_up.png", :size=>"35x20"), upvote_story_comment_url(@story,comment), :method => :get %></td></tr>
       <tr>
-        <td class="main">votes <%=comment.votes%>  <%=comment.comment_text%>
+        <td class="main">votes <%=comment.votes%>  <%=raw(comment.comment_text) -%>
           <br> <font size="1">  Posted <%= time_ago_in_words(comment.created_at) %> ago
             by <%=comment.user_id%></font>
       <tr><td> <%= link_to image_tag("arrow_down.png", :size => "35x20"), downvote_story_comment_url(@story,comment), :method => :get %></td></tr>

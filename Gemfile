@@ -7,6 +7,7 @@ gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 gem 'jquery-rails', '>=0.2.6'
 gem 'mysql2'
 
+
 group :development do
   gem 'rspec-rails', '2.1.0'
   gem 'annotate-models', '1.0.4'

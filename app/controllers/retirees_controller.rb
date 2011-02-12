@@ -10,7 +10,7 @@ class RetireesController < ApplicationController
     @title = "Retiree wisdom"
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html #{render :html => 'index.html.erb'}
       format.xml  { render :xml => @retirees }
     end
   end
@@ -56,8 +56,6 @@ class RetireesController < ApplicationController
   # POST /retirees
   # POST /retirees.xml
   def create
-    p params
-
     @retiree = Retiree.new(params[:retiree])
     @retiree.user_id = current_user.id
     respond_to do |format|

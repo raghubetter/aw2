@@ -1,5 +1,18 @@
-SampleApp::Application.routes.draw do
+SampleApp::Application.routes.draw do |map|
 
+  map.resources :posts, :name_prefix => 'all_', :collection => { :search => :get }
+  map.resources :forums, :topics, :posts, :monitorship
+
+  %w(forum).each do |attr|
+    map.resources :posts, :name_prefix => "#{attr}_", :path_prefix => "/#{attr.pluralize}/:#{attr}_id"
+  end
+
+  map.resources :forums do |forum|
+    forum.resources :topics do |topic|
+      topic.resources :posts
+      topic.resource :monitorship, :controller => :monitorships
+    end
+  end
 
   resources :users do
     member do
@@ -37,11 +50,13 @@ SampleApp::Application.routes.draw do
   #resources :stories,    :only => [:create, :destroy, :show]
   resources :comments,    :only => [:create, :destroy, :new, :show]
   #  resources :relationships, :only => [:create, :destroy]
-  
+ 
+
   root :to => "pages#home"
 
   # match '/upvote', :to => 'stories#upvote'
   #match '/downvote', :to => 'stories#downvote'
+  match '/unsigned_retiree', :to => 'pages#unsigned_retiree'
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'

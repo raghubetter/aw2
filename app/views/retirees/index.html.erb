@@ -1,3 +1,4 @@
+<% if signed_in? %>
 <div>
   <% form_for :retiree, :url => find_retiree_retirees_path do |f| %>
     <%= f.text_field :name %>
@@ -48,3 +49,6 @@
 <br/>
 
 <%= link_to 'New Retiree', new_retiree_path %>
+<% else %>
+<% render  :file => "/shared/unsigned_retiree_page.html" %>
+<% end %>

@@ -14,6 +14,7 @@
 #
 
 class User < ActiveRecord::Base
+#   include SavageBeast::UserInit
   attr_accessor   :password
   attr_accessible :name, :email, :password, :password_confirmation
   
@@ -33,7 +34,14 @@ class User < ActiveRecord::Base
   has_one :token # specify only one token at a time.
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  
+
+ 
+#  validates_presence_of :identifier, :email
+  validates_uniqueness_of :identifier, :email, :case_sensitive => false
+
+  def display_name
+    username
+  end
   validates :name,  :presence => true,
                     :length   => { :maximum => 50 }
   validates :email, :presence   => true,

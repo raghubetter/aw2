@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+  include SavageBeast::ApplicationHelper
   # Return a title on a per-page basis.
   def title
     base_title = "Autoworker Community"
